@@ -18,9 +18,8 @@
                 <div class="col">
                     <form method="post" action="{{ route('admin.profile.store') }}" enctype="multipart/form-data">
                     	@csrf
+                    	<input type="hidden" name="id" value="{{ $EditAdminData->id }}">
                         <div class="row">
-                          
-
                             	<div class="col-md-6">
                             	  	<div class="form-group">
 	                                    <h5>User name <span class="text-danger">*</span></h5>
@@ -47,7 +46,7 @@
 	                                <div class="form-group">
 	                                    <h5>Ảnh đại diện <span class="text-danger">*</span></h5>
 	                                    <div class="controls">
-	                                        <input id="image" type="file" name="profile_photo_path" class="form-control" required="">
+	                                        <input id="image" type="file" name="profile_photo_path" class="form-control">
 	                                        <div class="help-block"></div>
 	                                    </div>
 	                                </div>
@@ -63,7 +62,7 @@
                     
                         
                         <div class="text-xs-right">
-                            <button type="submit" class="btn btn-rounded btn-info">Cập nhật</button>
+                            <input type="submit" class="btn btn-rounded btn-info" value="Cập nhật">
                         </div>
                     </form>
 

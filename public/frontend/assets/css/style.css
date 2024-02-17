@@ -1623,7 +1623,7 @@ section.banner__two:before {
 /* portfolio-section-end */
 .page__title {
     margin-top: 30px;
-    padding: 232px 0px;
+    padding: 20px 0px;
     text-align: center;
 }
 .page__title .bg-layer {
@@ -1947,7 +1947,7 @@ h3.comments__title {
     padding: 110px;
 }
 .form-inner input {
-    color: rgba(255, 255, 255, 0.25);
+    color: white;
     font-family: Rubik;
     font-size: 12px;
     font-style: normal;
@@ -1963,7 +1963,7 @@ h3.comments__title {
 .form-inner textarea {
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.25);
+    color: white;
     font-family: Rubik;
     font-size: 12px;
     font-style: normal;
@@ -2459,7 +2459,7 @@ section.accomplised__section__two.see__pad.three:before {
 
 ***/
 .service__details{
-    padding: 140px 0px 0px;
+    padding: 40px 0px 0px;
 }
 .all__service h3 {
     background: #FF0E75;
@@ -2700,4 +2700,93 @@ ul.service__details__1__cat {
     color: white;
     border: 1px solid;
     padding: 8px;width: 100%;
+}
+span.price {
+    font-size: 22px;
+    color: red;
+}
+span.price-strike {
+    font-size: 14px;
+    text-decoration: line-through;
+    font-weight: unset;
+}
+.image {
+    text-align: center;
+}
+.chuaform {
+    position: relative;
+    z-index: 1000;
+}
+.banhmi {
+    padding: 20px;
+    border-bottom: 1px solid #4d4b4b;
+}
+h1.bvtitle {
+    font-size: 30px;
+    line-height: 50px;
+}
+.toc-container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
+    #tdtoc {
+    color: blue;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 1px solid;
+    margin: 10px;
+}
+
+    .toc-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .toc-list li {
+        margin-left: 10px;
+    }
+
+    .toc-list a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .toc-list a:hover {
+        color: #007bff;
+    }
+    p#tdtoc i {
+    position: absolute;
+    top: 6px;
+    left: 131px;
+}
+
+.quay{
+        transform: rotate(-90deg);
+}
+li.demo {
+    text-align: center;
+}
+span.nutdemo {
+    background: #163ec1;
+    padding: 6px 19px;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+h5.dattao {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+}
+.page__title2 {
+    margin-top: 30px;
+    padding: 369px 0px;
+    text-align: center;
 }

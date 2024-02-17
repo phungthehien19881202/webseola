@@ -6,13 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\BlogPost;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class IndexController extends Controller
 {
     public function index(){
-        return view('frontend.index');
+        $blogposts = BlogPost::latest()->limit(3)->get();
+        return view('frontend.index',compact('blogposts'));
     }
 
     public function UserLogout(){
@@ -71,6 +76,45 @@ class IndexController extends Controller
              return redirect()->back();
         }
     }
+    public function ProductDetails($slugcat,$slug,$id){
+        $product = Product::findOrFail($id);
+        $cat     = Category::where('category_slug_vn',$slugcat)->firstOrFail();
+
+        if($product->subcategory_id != 0){
+            $subcat  = SubCategory::findOrFail($product->subcategory_id);
+        }else{
+            $subcat="";
+        }
+     
+        
+        return view('frontend.product.product_details',compact('product','cat','subcat'));
+    }
+
+
+    
+    // category wise data
+    public function CatWiseProduct(Request $request, $slug){
+        $categories = Category::where('category_slug_vn',$slug)->firstOrFail();
+        $cat_id= $categories->id;
+        $products = Product::where('status',1)->where('category_id',$cat_id)->orderBy('id','DESC')->paginate(16);
+        
+        
+        return view('frontend.product.category_view',compact('products','categories'));
+    }
+    // Subcategory wise data
+    public function SubCatWiseProduct($slug,$subslug){
+        $subcategories = SubCategory::where('subcategory_slug',$subslug)->firstOrFail();
+        $subcat_id = $subcategories->id;
+        $categories = Category::where('category_slug_vn',$slug)->firstOrFail();
+        $products = Product::where('status',1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC')->paginate(16);
+        return view('frontend.product.subcategory_view',compact('products','subcategories','categories'));
+
+    }
+
+
+    
+
+
 
 
 

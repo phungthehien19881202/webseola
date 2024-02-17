@@ -10,7 +10,7 @@
 		    <div class="widget-user-header bg-black" style="background: url('../images/gallery/full/10.jpg') center center;">
 		        <h3 class="widget-user-username">Tên: {{ $adminData->name }}</h3>
 		        <h6 class="widget-user-desc">Email: {{ $adminData->email }}</h6>
-		        <a href="{{ route('admin.profile.edit') }}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Sửa thông tin</a>
+		        <a href="{{ route('admin.profile.edit',$adminData->id) }}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Sửa thông tin</a>
 		    </div>
 		    <div class="widget-user-image">
 		        <img class="rounded-circle" src="{{( !empty($adminData->profile_photo_path))?url('upload/admin_images/'.$adminData->profile_photo_path):url('upload/no_image.jpg') }}" alt="Admin">

@@ -101,11 +101,11 @@
 			</ul>
 		  </li>	
 		  @php
-		  $AdminData = DB::table('admins')->first();
+		  $AdminData = auth()->guard('admin')->user();
 		  @endphp
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	
-			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
+			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown">
 				<img src="{{( !empty($AdminData->profile_photo_path))?url('upload/admin_images/'.$AdminData->profile_photo_path):url('upload/no_image.jpg') }}" alt="admin">
 			</a>
 			<ul class="dropdown-menu animated flipInX">
@@ -118,11 +118,7 @@
 			  </li>
 			</ul>
           </li>	
-		  <li>
-              <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
-			  	<i class="ti-settings"></i>
-			  </a>
-          </li>
+	
 			
         </ul>
       </div>

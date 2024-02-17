@@ -37,7 +37,6 @@ class AdminController extends Controller
         $this->guard = $guard;
          
     }
-
     public function loginForm(){
     	return view('auth.admin_login', ['guard' => 'admin']);
     }
@@ -103,6 +102,7 @@ class AdminController extends Controller
     public function destroy(Request $request): LogoutResponse
     {
         $this->guard->logout();
+        
 
         $request->session()->invalidate();
 

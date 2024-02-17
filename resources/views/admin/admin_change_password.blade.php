@@ -54,7 +54,7 @@
                     
                         
                         <div class="text-xs-right">
-                            <button type="submit" class="btn btn-rounded btn-info">Cập nhật</button>
+                            <input type="submit" class="btn btn-rounded btn-info" value="Lưu">
                         </div>
                     </form>
 
